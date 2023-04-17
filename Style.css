@@ -1,0 +1,124 @@
+body {
+  font-family: "Amiri Quran", serif;
+  background: #e4f1fe;
+  color: #22313f;
+}
+.current-forecast {
+  margin-top: 55px;
+  margin-bottom: 55px;
+  text-align: center;
+  left: 25px;
+  right: 25px;
+}
+.current-forecast .heading-1 {
+  font-weight: 20px;
+  font-size: 40px;
+  color: #1a64d6;
+  /*color: #885df1;*/
+}
+.row {
+  text-align: center;
+}
+
+.currentWeather {
+}
+.top-part {
+  margin-bottom: 25px;
+}
+#right {
+  text-align: right;
+}
+#left {
+  text-align: left;
+}
+.temperature {
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 250;
+}
+.units {
+  position: relative;
+  top: -14px;
+}
+
+/*The plan is a zoom in transition 
+      effect on each days weather*/
+.container .row .col-md-2:hover {
+  background: #8cbaff;
+  border: 1px solid #1a64d6;
+  border-radius: 20px;
+  transition: all 200ms ease-in-out;
+}
+/*depedning on the weather , The background image 
+      changes like with ios.
+      Sunny the backgroundare proper clouds,
+      rany , background is rain*/
+.box {
+  align-items: right;
+  height: 50px;
+  background-color: #eee;
+  width: 330px;
+  border-radius: 50px;
+  display: flex;
+
+  align-items: right;
+  justify-content: space-between;
+  padding: 0px 24px;
+}
+input {
+  width: 140px;
+  border: #8cbaff;
+  outline: none;
+  background: none;
+  font-size: 18px;
+}
+.fa-solid:hover {
+  color: purple;
+  cursor: pointer;
+}
+#temp-description {
+  text-transform: capitalize;
+}
+.h1 {
+  font-weight: 25px;
+  font-size: 55px;
+}
+.h3 {
+}
+.current-forecast .Weather-Search {
+  text-align: center;
+}
+#search-text-input {
+  text-align: center;
+  /* border-style: solid;
+  border-width: 3px;
+  border-color: #8cbaff;
+  border-radius: 10px;*/
+}
+/*#search-button {
+  text-align: center;
+  cursor: pointer;
+  border-style: solid;
+  border-radius: 30px;
+}*/
+
+button {
+  border-radius: 25px;
+  border: none;
+  background: #007cb9;
+  font-size: 16px;
+  text-align: center;
+  line-height: 10px;
+  padding: 13px 18px;
+  text-align: center;
+  color: white;
+}
+button:hover {
+  cursor: pointer;
+  background: #0066ffee;
+}
+/*list  */
+#list {
+  list-style: none;
+}
+/*Weather description */

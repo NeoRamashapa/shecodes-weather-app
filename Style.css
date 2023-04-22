@@ -122,3 +122,11 @@ button:hover {
   list-style: none;
 }
 /*Weather description */
+
+/* footer section styling */
+footer {
+  padding: 15px 23px;
+  color: black;
+  text-align: center;
+  align-items: center;
+}

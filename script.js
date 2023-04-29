@@ -60,7 +60,8 @@ form.addEventListener("submit", search);
 function showTemperature(response) {
   console.log(response.data);
   description.innerHTML = response.data.weather[0].description;
-  temperatureElement.innerHTML = `${temperature}`;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  // `${temperature}`;
 
   celsiusTemperature = response.data.main.temp;
 
@@ -72,16 +73,17 @@ function showTemperature(response) {
 //axios
 //axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 //Bonus feature
-function farenheitConversion(event) {
+function fahrenheitConversion(event) {
   event.preventDefault();
-  let farenheitTemperature = (celciusTemperature * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(farenheitTemperature);
-}
-let farenheitLink = document.querySelector("#fahrenheit-link");
-farenheitLink.addEventListener("click", farenheitConversion);
 
-function celcuisConversion(event) {
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+let fahrenheit = document.querySelector("#fahrenheit-link");
+fahrenheit.addEventListener("click", fahrenheitConversion);
+
+function celsuisConversion(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
@@ -90,7 +92,7 @@ function celcuisConversion(event) {
   //(32°F − 32) × 5/
 }
 let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", celcuisConversion);
+celsiusLink.addEventListener("click", celsuisConversion);
 
 let celsiusTemperature = null;
 

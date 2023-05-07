@@ -36,6 +36,12 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
+    );
 }
 function search(event) {
   event.preventDefault();
@@ -45,14 +51,14 @@ function search(event) {
   //`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&&units=metric`;
   axios.get(apiUrl).then(showWeather);
 
-  /*let searchInput = document.querySelector("#search-text-input");
+  let searchInput = document.querySelector("#search-text-input");
   let h1 = document.querySelector("heading-1");
   if (searchInput.value) {
     h1.innerHTML = `${searchInput.value}`;
   } else {
     h1.innerHTML = null;
     alert("Please enter a city");
-  }*/
+  }
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
@@ -61,10 +67,8 @@ function showTemperature(response) {
   console.log(response.data);
   description.innerHTML = response.data.weather[0].description;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  // `${temperature}`;
 
-  celsiusTemperature = response.data.main.temp;
-
+  let celsiusTemperature = response.data.main.temp;
   let temperature = Math.round(celsiusTemperature);
   let temperatureElement = document.querySelector("#temperature");
   let description = document.querySelector("#temp-description");

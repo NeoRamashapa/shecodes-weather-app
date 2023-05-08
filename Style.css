@@ -43,11 +43,21 @@ body {
 
 /*The plan is a zoom in transition 
       effect on each days weather*/
-.container .row .col-md-2:hover {
+.weather-forecast .row .col-md-2:hover {
   background: #8cbaff;
   border: 1px solid #1a64d6;
   border-radius: 20px;
   transition: all 200ms ease-in-out;
+}
+.weather-forecast-date img {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+.weather-forecast-temperature-min {
+  opacity: 0.7;
+}
+.weather-forecast-temperature-max {
+  font-size: 18px;
 }
 /*depedning on the weather , The background image 
       changes like with ios.

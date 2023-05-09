@@ -22,6 +22,31 @@ let days = [
 let day = days[now.getDay()]; //0 and 6
 h3.innerHTML = `${day} , ${hours}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  forecastElement.innerHTML = forecastHTML;
+
+  let forecastHTML = "";
+  forecastHTML =
+    forecastHTML +
+    `<div class="row">
+        <div class="col-md-2">
+          <div class="weather-forecast-date">
+            <h2>Thursday</h2>
+            <img
+              src="https://openweathermap.org/img/wn/10d@2x.png"
+              alt=""
+              width="55px"
+            />
+            <p class="weather-forecast-temperature-max">19°C</p>
+            <p class="weather-forecast-temperature-min">14°C</p>
+          </div>
+        </div>
+      </div>`;
+}
+displayForecast();
+
 function showWeather(response) {
   console.log(response.data.weather[0].description);
   document.querySelector("#heading-1").innerHTML = response.data.name;

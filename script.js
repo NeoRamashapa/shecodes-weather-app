@@ -22,7 +22,7 @@ let days = [
 let day = days[now.getDay()]; //0 and 6
 h3.innerHTML = `${day} , ${hours}:${minutes}`;
 
-function displayForecast() {
+/*function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
   forecastElement.innerHTML = forecastHTML;
@@ -45,7 +45,7 @@ function displayForecast() {
         </div>
       </div>`;
 }
-displayForecast();
+displayForecast();*/
 
 function showWeather(response) {
   console.log(response.data.weather[0].description);
@@ -89,14 +89,13 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
 function showTemperature(response) {
-  console.log(response.data);
-  description.innerHTML = response.data.weather[0].description;
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-
   let celsiusTemperature = response.data.main.temp;
   let temperature = Math.round(celsiusTemperature);
   let temperatureElement = document.querySelector("#temperature");
   let description = document.querySelector("#temp-description");
+
+  description.innerHTML = response.data.weather[0].description;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 //axios
@@ -105,8 +104,8 @@ function showTemperature(response) {
 function fahrenheitConversion(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 let fahrenheit = document.querySelector("#fahrenheit-link");
@@ -114,11 +113,11 @@ fahrenheit.addEventListener("click", fahrenheitConversion);
 
 function celsuisConversion(event) {
   event.preventDefault();
+
+  let Ctemp = Math.round(celsiusTemperature);
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  //let celsiusTemperature = Math.round(((celsiusTemperature - 32) * 5) / 9);
-  // temperature = Number(temperature);
-  //(32°F − 32) × 5/
+
+  temperatureElement.innerHTML = Math.round(Ctemp);
 }
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", celsuisConversion);

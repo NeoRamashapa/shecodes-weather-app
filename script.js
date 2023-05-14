@@ -23,7 +23,33 @@ let day = days[now.getDay()]; //0 and 6
 h3.innerHTML = `${day} , ${hours}:${minutes}`;
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thursday", "Friday", "Saturday"];
+  let forecastHTML = `<div class="row">`;
+
+  //the foreach added a new column by looping through each day
+  //and putting the day inside
+  //${day} shows day from the array
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2">
+      <div class="weather-forecast-date">${day}</div>
+      <img
+        src="https://openweathermap.org/img/wn/10d@2x.png"
+        alt="weather-icon"
+        width="42"
+      />
+      <div class="weather-forecast-temperature">
+        <span class="weather-forecast-temperature-max"> 18°C | </span>
+        <span class="weather-forecast-temperature-min"> 12°C </span>
+      </div>
+  </div> `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 displayForecast();
@@ -88,9 +114,6 @@ function showTemperature(response) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-//axios
-//axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
-//Bonus feature
 function fahrenheitConversion(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");

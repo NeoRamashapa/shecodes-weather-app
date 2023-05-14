@@ -5,7 +5,7 @@ body {
 }
 .current-forecast {
   margin-top: 55px;
-  margin-bottom: 55px;
+  margin-bottom: 25px;
   text-align: center;
   left: 25px;
   right: 25px;
@@ -57,7 +57,6 @@ body {
 .weather-forecast-date img {
   margin-top: 26px;
   margin-bottom: 26px;
-  width: 30px;
 }
 .weather-forecast-temperature-min {
   opacity: 0.9;

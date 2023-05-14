@@ -22,33 +22,22 @@ let days = [
 let day = days[now.getDay()]; //0 and 6
 h3.innerHTML = `${day} , ${hours}:${minutes}`;
 
-/*function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-
-  forecastElement.innerHTML = forecastHTML;
-
-  let forecastHTML = "";
-  forecastHTML =
-    forecastHTML +
-    `<div class="row">
-        <div class="col-md-2">
-          <div class="weather-forecast-date">
-            <h2>Thursday</h2>
-            <img
-              src="https://openweathermap.org/img/wn/10d@2x.png"
-              alt=""
-              width="55px"
-            />
-            <p class="weather-forecast-temperature-max">19°C</p>
-            <p class="weather-forecast-temperature-min">14°C</p>
-          </div>
-        </div>
-      </div>`;
+function displayForecast(response) {
+  console.log(response.data.daily);
 }
-displayForecast();*/
 
+displayForecast();
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "5cf64457cc411e957305c47930adde00";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}
+  &appid=${apiKey}
+  &units=metric`;
+  console.log(apiUrl);
+  //axios.get(apiUrl).then(displayForecast);
+}
 function showWeather(response) {
-  console.log(response.data.weather[0].description);
   document.querySelector("#heading-1").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -67,13 +56,14 @@ function showWeather(response) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
     );
+
+  getForecast(response.data.coord);
 }
 function search(event) {
   event.preventDefault();
   let apiKey = "5cf64457cc411e957305c47930adde00";
   let city = document.querySelector("#search-text-input").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-  //`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&&units=metric`;
   axios.get(apiUrl).then(showWeather);
 
   let searchInput = document.querySelector("#search-text-input");

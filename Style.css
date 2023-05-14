@@ -1,6 +1,6 @@
 body {
   font-family: "Amiri Quran", serif;
-  background: #e4f1fe;
+  /*background: #e4f1fe;*/
   color: #22313f;
 }
 .current-forecast {
@@ -40,7 +40,9 @@ body {
   position: relative;
   top: -14px;
 }
-
+#forecast {
+  text-align: center;
+}
 /*The plan is a zoom in transition 
       effect on each days weather*/
 .weather-forecast .row .col-md-2:hover {
@@ -49,15 +51,20 @@ body {
   border-radius: 20px;
   transition: all 200ms ease-in-out;
 }
+.weather-forecast-date {
+  font-size: 23px;
+}
 .weather-forecast-date img {
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 26px;
+  margin-bottom: 26px;
+  width: 30px;
 }
 .weather-forecast-temperature-min {
-  opacity: 0.7;
+  opacity: 0.9;
+  font-size: 16px;
 }
 .weather-forecast-temperature-max {
-  font-size: 18px;
+  font-size: 16px;
 }
 /*depedning on the weather , The background image 
       changes like with ios.

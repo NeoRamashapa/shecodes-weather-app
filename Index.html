@@ -22,7 +22,6 @@
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   </head>
   <body>
-    <!---->
     <div class="current-forecast">
       <div class="search">
         <div class="row">
@@ -78,24 +77,21 @@
 
     <div class="weather-forecast" id="forecast">
       <div class="row">
-        <div class="col-md-2">
-          <div class="weather-forecast-date">
-            <h2>Thursday</h2>
-            <img
-              src="https://openweathermap.org/img/wn/10d@2x.png"
-              alt=""
-              width="55px"
-            />
-            <p class="weather-forecast-temperature-max">19°C</p>
-            <p class="weather-forecast-temperature-min">14°C</p>
+        <div class="col-2">
+          <div class="weather-forecast-date">Thu</div>
+          <img
+            src="https://openweathermap.org/img/wn/10d@2x.png"
+            alt="westher-icon"
+          />
+          <div class="weather-forecast-temperature">
+            <span class="weather-forecast-temperature-max"> 18°C | </span>
+            <span class="weather-forecast-temperature-min"> 12°C </span>
           </div>
         </div>
       </div>
     </div>
 
-    <script src="script.js">
-      /*https://github.com/NeoRamashapa/shecodes-weather-app*/
-    </script>
+    <script src="script.js"></script>
   </body>
   <footer>
     <a href="https://github.com/NeoRamashapa/shecodes-weather-app">GitHub</a>

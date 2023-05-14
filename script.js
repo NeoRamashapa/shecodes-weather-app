@@ -21,7 +21,7 @@ let days = [
 ];
 let day = days[now.getDay()]; //0 and 6
 h3.innerHTML = `${day} , ${hours}:${minutes}`;
-
+//sheCodes apiKey 1a6432c5ca7b6f9b0bee45c98d54ea71
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let days = ["Thursday", "Friday", "Saturday"];
@@ -57,11 +57,13 @@ displayForecast();
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "5cf64457cc411e957305c47930adde00";
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?
+  lat=${coordinates.lat}&lon=${coordinates.lon}
   &appid=${apiKey}
   &units=metric`;
+
   console.log(apiUrl);
-  //axios.get(apiUrl).then(displayForecast);
+  axios.get(apiUrl).then(displayForecast);
 }
 function showWeather(response) {
   document.querySelector("#heading-1").innerHTML = response.data.name;
@@ -82,7 +84,7 @@ function showWeather(response) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
     );
-
+  console.log(response.data);
   getForecast(response.data.coord);
 }
 function search(event) {

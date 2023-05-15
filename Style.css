@@ -1,7 +1,8 @@
 body {
   font-family: "Amiri Quran", serif;
   /*background: #e4f1fe;*/
-  color: #22313f;
+  color: white;
+  background-color: #22313f;
 }
 .current-forecast {
   margin-top: 55px;
@@ -43,27 +44,19 @@ body {
 #forecast {
   text-align: center;
 }
-/*The plan is a zoom in transition 
-      effect on each days weather*/
-.weather-forecast .row .col-md-2:hover {
-  background: #8cbaff;
-  border: 1px solid #1a64d6;
-  border-radius: 20px;
-  transition: all 200ms ease-in-out;
-}
+
 .weather-forecast-date {
-  font-size: 18px;
+  font-size: 20px;
 }
 .weather-forecast-date img {
   margin-top: 26px;
   margin-bottom: 26px;
 }
 .weather-forecast-temperature-min {
-  opacity: 0.9;
-  font-size: 16px;
+  font-size: 18px;
 }
 .weather-forecast-temperature-max {
-  font-size: 16px;
+  font-size: 18px;
 }
 /*depedning on the weather , The background image 
       changes like with ios.
@@ -83,7 +76,7 @@ body {
 }
 input {
   width: 140px;
-  border: #8cbaff;
+  border: #003f9e;
   outline: none;
   background: none;
   font-size: 18px;
@@ -106,17 +99,14 @@ input {
 }
 #search-text-input {
   text-align: center;
-  /* border-style: solid;
-  border-width: 3px;
-  border-color: #8cbaff;
-  border-radius: 10px;*/
+  color: white;
+  width: 22%;
+  padding: 5px 15px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #007cb9;
+  border-radius: 20px;
 }
-/*#search-button {
-  text-align: center;
-  cursor: pointer;
-  border-style: solid;
-  border-radius: 30px;
-}*/
 
 button {
   border-radius: 25px;
@@ -142,7 +132,7 @@ button:hover {
 /* footer section styling */
 footer {
   padding: 15px 23px;
-  color: black;
+  color: wheat;
   text-align: center;
   align-items: center;
 }

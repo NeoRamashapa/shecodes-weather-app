@@ -52,7 +52,7 @@ body {
   transition: all 200ms ease-in-out;
 }
 .weather-forecast-date {
-  font-size: 23px;
+  font-size: 18px;
 }
 .weather-forecast-date img {
   margin-top: 26px;

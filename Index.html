@@ -13,6 +13,12 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="Style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,8 +31,9 @@
   <body>
     <div class="current-forecast">
       <div class="search">
-        <div class="row">
-          <div class="col">
+        
+        <div class="div">
+          <div class="div">
             <form class="Weather-Search" id="search-form">
               <input
                 type="search"
@@ -35,11 +42,23 @@
                 autofocus="on"
                 id="search-text-input"
               />
-              <button type="submit" value="Search">Go</button>
-              <br />
-              <!--Area i.e Durban-->
-              <h1 id="heading-1"></h1>
-              <br />
+              <button class="btn " type="submit" value="Search" id="go">Go</button>
+          </div>
+           
+             
+              <div class="daily-weather">
+               
+             
+<!--temperature stuff-->
+              <div class="float-left">
+                <!--icon-->
+                <img src="" id="icon" class="float-left" />
+                <strong class="temperature" id="temperature"></strong>
+                <span class="units">°C</span>
+             <h1 id="heading-1"></h1> </div>
+<!--Date, current day-->
+              <h3 id="date "></h3> 
+              
               <div class="col" id="align-right">
                 <!--temperature decsription-->
                 <ul id="list">
@@ -54,23 +73,6 @@
                   </li>
                 </ul>
               </div>
-              <!--Date, current day-->
-              <h3 id="date "></h3>
-              <!--temperature stuff-->
-              <div class="float-left">
-                <!--icon-->
-                <img src="" id="icon" class="float-left" />
-                <strong class="temperature" id="temperature"></strong>
-                <span class="units">°C</span>
-                <!--Actual Temperature-->
-                <!--  <span class="temperature" id="temperature"><p>°C</p> </span>
-                <span class="units">
-                 Degrees or Farenheit Conversion-->
-
-                <!-- <a href="#" id="celcius-link" class="active">°C</a>
-                  <a href="#" id="fahrenheit-link">°F</a>
-                  
-                </span>-->
               </div>
               <br />
             </form>
@@ -83,7 +85,5 @@
 
     <script src="script.js"></script>
   </body>
-  <footer>
-    <a href="https://github.com/NeoRamashapa/shecodes-weather-app">GitHub</a>
-  </footer>
+  
 </html>

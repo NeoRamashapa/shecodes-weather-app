@@ -1,8 +1,12 @@
+:root {
+  --branding-color: #231d3c;
+  --heading-font-family: "Playfair Display", serif;
+  --default-font-family: "Poppins", sans-serif;
+  --secondary-color: #f9f7fe;
+}
 body {
-  font-family: "Amiri Quran", serif;
-  /*background: #e4f1fe;*/
-  color: white;
-  background-color: #22313f;
+  font-family: var(--default-font-family);
+  color: #231d3c;
 }
 .current-forecast {
   margin-top: 55px;
@@ -12,17 +16,13 @@ body {
   right: 25px;
 }
 .current-forecast .heading-1 {
-  font-weight: 20px;
-  font-size: 40px;
-  color: #1a64d6;
-  /*color: #885df1;*/
+  font-weight: 25px;
+  font-size: 30px;
 }
 .row {
   text-align: center;
 }
 
-.currentWeather {
-}
 .top-part {
   margin-bottom: 25px;
 }
@@ -33,9 +33,9 @@ body {
   text-align: left;
 }
 .temperature {
-  font-size: 40px;
+  font-size: 45px;
   line-height: 1;
-  font-weight: 250;
+  font-weight: 100;
 }
 .units {
   position: relative;
@@ -53,7 +53,7 @@ body {
   margin-bottom: 26px;
 }
 .weather-forecast-temperature-min {
-  font-size: 18px;
+  font-size: 11px;
 }
 .weather-forecast-temperature-max {
   font-size: 18px;
@@ -65,74 +65,48 @@ body {
 .box {
   align-items: right;
   height: 50px;
-  background-color: #eee;
   width: 330px;
-  border-radius: 50px;
   display: flex;
-
   align-items: right;
   justify-content: space-between;
   padding: 0px 24px;
-}
-input {
-  width: 140px;
-  border: #003f9e;
-  outline: none;
-  background: none;
-  font-size: 18px;
-}
-.fa-solid:hover {
-  color: purple;
-  cursor: pointer;
 }
 #temp-description {
   text-transform: capitalize;
 }
 .h1 {
   font-weight: 25px;
-  font-size: 55px;
-}
-.h3 {
+  font-size: 30px;
 }
 .current-forecast .Weather-Search {
   text-align: center;
 }
 #search-text-input {
   text-align: center;
-  color: white;
-  width: 22%;
-  padding: 5px 15px;
-  margin: 8px 0;
+  font-size: 12px;
+  width: 23%;
+  padding: 5px 7px;
+  margin: 12px 0;
   box-sizing: border-box;
-  border: 2px solid #007cb9;
-  border-radius: 20px;
-}
-
-button {
+  border: 1px solid #231d3c;
   border-radius: 25px;
-  border: none;
-  background: #007cb9;
-  font-size: 16px;
+}
+button {
+  border-radius: 20px;
+  border: 1px solid #231d3c;
+  box-sizing: border-box;
+  background: none;
+  font-size: 10px;
   text-align: center;
-  line-height: 10px;
-  padding: 13px 18px;
-  text-align: center;
-  color: white;
+  padding: 5px 10px;
+  margin: 12px 0;
+  cursor: pointer;
 }
 button:hover {
-  cursor: pointer;
-  background: #0066ffee;
+  transition: ease-in-out;
 }
 /*list  */
 #list {
   list-style: none;
 }
 /*Weather description */
-
-/* footer section styling */
-footer {
-  padding: 15px 23px;
-  color: wheat;
-  text-align: center;
-  align-items: center;
-}
